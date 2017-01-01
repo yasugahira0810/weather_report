@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" ng-app="myApp">
+<html lang="ja" ng-app="weatherApp">
 
 <head>
     <title>AngularJS</title>
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
 
     <!-- bootstrapとfontawesomeをCDNから取得 -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <style>
         html,
         body {
@@ -16,9 +16,9 @@
     </style>
 
     <!-- angularをCDNから取得 -->
-    <script src="//code.angularjs.org/1.5.0/angular.min.js"></script>
-    <script src="//code.angularjs.org/1.5.0/angular-route.min.js"></script>
-    <script src="//code.angularjs.org/1.5.0/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-resource.min.js"></script>
     <script src="app.js"></script>
 </head>
 
@@ -39,6 +39,9 @@
     </header>
 
     <div class="container">
+
+      <div ng-view></div>
+
     </div>
 
 </body>
