@@ -1,6 +1,7 @@
 // module
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
+// config
 weatherApp.config(function ($routeProvider) {
   $routeProvider
 
@@ -15,10 +16,27 @@ weatherApp.config(function ($routeProvider) {
   })
 })
 
-weatherApp.controller('homeController', ['$scope', function ($scope) {
+// service
+weatherApp.service('cityService', function () {
+
+  this.city = 'Osaka';
+
+});
+
+weatherApp.controller('homeController', ['$scope', 'cityService', function ($scope, cityService) {
+
+  $scope.city = cityService.city;
+
+  $scope.$watch('city', function (newVal) {
+
+    cityService.city = newVal;
+
+  });
 
 }]);
 
-weatherApp.controller('forecastController', ['$scope', function ($scope) {
+weatherApp.controller('forecastController', ['$scope', 'cityService', function ($scope, cityService) {
+
+  $scope.city = cityService.city;
 
 }]);
